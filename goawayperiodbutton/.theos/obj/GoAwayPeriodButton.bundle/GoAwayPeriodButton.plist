@@ -6,32 +6,38 @@
 	<array>
 		<dict>
 			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>com.rcrepo.safaridefaultkeyboard</string>
-			<key>key</key>
-			<string>safariEnabled</string>
+			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Enabled in Safari</string>
-			<key>PostNotification</key>
-			<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+			<string>Go.Away.Period.Button</string>
 		</dict>
 		<dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>com.rcrepo.safaridefaultkeyboard</string>
-			<key>key</key>
-			<string>chromeEnabled</string>
-			<key>label</key>
-			<string>Enabled in Chrome</string>
-			<key>PostNotification</key>
-			<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
-		</dict>
+     	   <key>cell</key>
+        	<string>PSLinkListCell</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
+        	<key>key</key>
+        	<string>keyboardPref</string>
+        	<key>label</key>
+        	<string>Keyboard Type</string>
+        	<key>detail</key>
+        	<string>PSListItemsController</string>
+        	<key>validTitles</key>
+        	<array>
+    			<string>Default (No period)</string>
+            	<string>URL (Period, slash, and ".com")</string>
+            	<string>Original (Period)</string>
+        	</array>
+        	<key>validValues</key>
+        	<array>
+            	<string>default</string>
+            	<string>address</string>
+            	<string>original</string>
+        	</array>
+        	<key>default</key>
+        	<string>default</string>
+        	<key>PostNotification</key>
+        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+    	</dict>
 	</array>
 	<key>title</key>
 	<string>Go.Away.Period.Button</string>
