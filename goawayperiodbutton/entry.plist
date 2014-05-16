@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = GoAwayPeriodButton;
+	cell = PSLinkCell;
+	detail = GoAwayPeriodButtonListController;
+	icon = GoAwayPeriodButton.png;
+	isController = 1;
+	label = Go.Away.Period.Button;
+    };
+}
