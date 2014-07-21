@@ -16,9 +16,65 @@
     	    <key>defaults</key>
 	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>key</key>
-        	<string>keyboardPref</string>
+        	<string>keyboardSafari</string>
         	<key>label</key>
-        	<string>Keyboard Type</string>
+        	<string>Keyboard for Safari</string>
+        	<key>detail</key>
+        	<string>PSListItemsController</string>
+        	<key>validTitles</key>
+        	<array>
+    			<string>Default (No period)</string>
+            	<string>URL (Period, slash, and ".com")</string>
+            	<string>Original (Period)</string>
+        	</array>
+        	<key>validValues</key>
+        	<array>
+            	<string>default</string>
+            	<string>address</string>
+            	<string>original</string>
+        	</array>
+        	<key>default</key>
+        	<string>default</string>
+        	<key>PostNotification</key>
+        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+    	</dict>
+    	<dict>
+     	   <key>cell</key>
+        	<string>PSLinkListCell</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
+        	<key>key</key>
+        	<string>keyboardChrome</string>
+        	<key>label</key>
+        	<string>Keyboard for Chrome</string>
+        	<key>detail</key>
+        	<string>PSListItemsController</string>
+        	<key>validTitles</key>
+        	<array>
+    			<string>Default (No period)</string>
+            	<string>URL (Period, slash, and ".com")</string>
+            	<string>Original (Period)</string>
+        	</array>
+        	<key>validValues</key>
+        	<array>
+            	<string>default</string>
+            	<string>address</string>
+            	<string>original</string>
+        	</array>
+        	<key>default</key>
+        	<string>default</string>
+        	<key>PostNotification</key>
+        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+    	</dict>
+    	<dict>
+     	   <key>cell</key>
+        	<string>PSLinkListCell</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
+        	<key>key</key>
+        	<string>keyboardSMS</string>
+        	<key>label</key>
+        	<string>Keyboard for Messages</string>
         	<key>detail</key>
         	<string>PSListItemsController</string>
         	<key>validTitles</key>

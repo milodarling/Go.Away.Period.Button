@@ -1,19 +1,19 @@
 NSString *settingsPath = @"/var/mobile/Library/Preferences/com.rcrepo.safaridefaultkeyboard.plist";
 NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:settingsPath];
 //BOOL enabled = [[prefs objectForKey:@"enabled"] boolValue];
-NSString *keyboardSafari = [prefs objectForKey:@"keyboardSafari"];
+NSString *keyboardChrome = [prefs objectForKey:@"keyboardChrome"];
 
 %hook UITextInputTraits
 	-(int) keyboardType {
-		if([keyboardSafari isEqualToString:@"default"])  {
+		if([keyboardChrome isEqualToString:@"default"])  {
 			return 0;
 			return %orig;
 			}
-		else if ([keyboardSafari isEqualToString:@"address"]) {
+		else if ([keyboardChrome isEqualToString:@"address"]) {
 			return 3;
 			return %orig;
 		}
-		else if ([keyboardSafari isEqualToString:@"original"] || [keyboardSafari isEqualToString:@""] || keyboardSafari == nil) {
+		else if ([keyboardChrome isEqualToString:@"original"] || [keyboardChrome isEqualToString:@""] || keyboardChrome == nil) {
 		return %orig;
 		}
 		else {
