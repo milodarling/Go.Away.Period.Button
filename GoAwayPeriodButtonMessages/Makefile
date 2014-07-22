@@ -1,13 +1,14 @@
 TARGET := iphone:clang
 ARCHS = armv7 arm64
 
-include theos/makefiles/common.mk
-
 TWEAK_NAME = GoAwayPeriodButtonMessages
+GoAwayPeriodButtonMessages_CFLAGS = -fobjc-arc
 GoAwayPeriodButtonMessages_FILES = Tweak.xm
+GoAwayPeriodButtonMessages_FRAMEWORKS = Foundation UIKit
 
+include theos/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/aggregate.mk
 
 after-install::
-	install.exec "killall -9 SpringBoard; killall -9 backboardd; killall -9 com.apple.MobileSMS"
-include $(THEOS_MAKE_PATH)/aggregate.mk
+	install.exec "killall -9 backboardd"
