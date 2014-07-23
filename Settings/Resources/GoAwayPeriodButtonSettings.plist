@@ -10,11 +10,10 @@
 			<key>label</key>
 			<string>Go.Away.Period.Button</string>
 		</dict>
+		
 		<dict>
      	   <key>cell</key>
         	<string>PSLinkListCell</string>
-    	    <key>defaults</key>
-	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>key</key>
         	<string>keyboardSafari</string>
         	<key>label</key>
@@ -23,9 +22,9 @@
         	<string>PSListItemsController</string>
         	<key>validTitles</key>
         	<array>
-    			<string>Default (No period)</string>
-            	<string>URL (Period, slash, and ".com")</string>
-            	<string>Original (Period)</string>
+    			<string>No period</string>
+            	<string>Period, slash, .com</string>
+            	<string>Original</string>
         	</array>
         	<key>validValues</key>
         	<array>
@@ -35,14 +34,13 @@
         	</array>
         	<key>default</key>
         	<string>default</string>
-        	<key>PostNotification</key>
-        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
     	</dict>
+		
     	<dict>
      	   <key>cell</key>
         	<string>PSLinkListCell</string>
-    	    <key>defaults</key>
-	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>key</key>
         	<string>keyboardChrome</string>
         	<key>label</key>
@@ -51,9 +49,9 @@
         	<string>PSListItemsController</string>
         	<key>validTitles</key>
         	<array>
-    			<string>Default (No period)</string>
-            	<string>URL (Period, slash, and ".com")</string>
-            	<string>Original (Period)</string>
+    			<string>No period</string>
+            	<string>Period, slash, .com</string>
+            	<string>Original</string>
         	</array>
         	<key>validValues</key>
         	<array>
@@ -63,14 +61,15 @@
         	</array>
         	<key>default</key>
         	<string>default</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>PostNotification</key>
-        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged-Chrome</string>
     	</dict>
+		
     	<dict>
      	   <key>cell</key>
         	<string>PSLinkListCell</string>
-    	    <key>defaults</key>
-	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>key</key>
         	<string>keyboardSMS</string>
         	<key>label</key>
@@ -79,9 +78,9 @@
         	<string>PSListItemsController</string>
         	<key>validTitles</key>
         	<array>
-    			<string>Default (No period)</string>
-            	<string>URL (Period, slash, and ".com")</string>
-            	<string>Original (Period)</string>
+    			<string>No period</string>
+            	<string>Period, slash, .com</string>
+            	<string>Original</string>
         	</array>
         	<key>validValues</key>
         	<array>
@@ -91,10 +90,13 @@
         	</array>
         	<key>default</key>
         	<string>default</string>
+    	    <key>defaults</key>
+	  		<string>com.rcrepo.safaridefaultkeyboard</string>
         	<key>PostNotification</key>
-        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged</string>
+        	<string>com.rcrepo.safaridefaultkeyboard/prefschanged-SMS</string>
     	</dict>
 	</array>
+	
 	<key>title</key>
 	<string>Go.Away.Period.Button</string>
 </dict>

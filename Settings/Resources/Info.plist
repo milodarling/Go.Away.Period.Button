@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>GoAwayPeriodButton</string>
+	<string>GoAwayPeriodButtonSettings</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.rcrepo.safaridefaultkeyboard</string>
+	<string>com.rcrepo.safaridefaultkeyboard-settings</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -23,6 +23,6 @@
 	<key>MinimumOSVersion</key>
 	<string>3.0</string>
 	<key>NSPrincipalClass</key>
-	<string>GoAwayPeriodButtonListController</string>
+	<string>GoAwayPeriodButtonSettingsController</string>
 </dict>
 </plist>
