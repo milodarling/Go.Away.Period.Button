@@ -1,16 +1,21 @@
 //
-// Go.Away.Period.Button
+//  Go.Away.Period.Button Tweak
 //
-// Safari Hook
+//  Safari Hook
 //
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#ifdef DEBUG
+	#define DebugLog(s, ...) NSLog(@"[Go.Away.Period.Button (Safari)] %@", [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#else
+	#define DebugLog(s, ...)
+#endif
+
 
 #define PREFS_PLIST_PATH	@"/private/var/mobile/Library/Preferences/com.rcrepo.safaridefaultkeyboard.plist"
-// should be using [NSHomeDirectory() stringByAppendingPathComponent:] here, but it isn't working ??
 
 static NSString *keyboardSafari = nil;
 
@@ -21,30 +26,17 @@ static NSString *keyboardSafari = nil;
 //
 static void loadPreferences() {
 	NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:PREFS_PLIST_PATH];
-    // NSLog(@"[Go.Away.Period.Button] loaded preferences, got this: %@", prefs);
+	DebugLog(@"loaded preferences, got this: %@", prefs);
 	
 	if (prefs && prefs[@"keyboardSafari"]) {
-		    // NSLog(@"[Go.Away.Period.Button] found setting for keyboardSafari: %@", prefs[@"keyboardSafari"]);
-			keyboardSafari = prefs[@"keyboardSafari"];
+		DebugLog(@"found setting for keyboardSafari: %@", prefs[@"keyboardSafari"]);
+		keyboardSafari = prefs[@"keyboardSafari"];
 	} else {
 		// use default setting
 		keyboardSafari = @"default";
-	}
-	
-    // NSLog(@"[Go.Away.Period.Button] using setting: keyboardSafari = %@", keyboardSafari);
+	}	
+    DebugLog(@"using setting: keyboardSafari = %@", keyboardSafari);
 }
-
-
-
-//
-// Apply settings again when returning from background.
-//
-%hook Application
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-	%orig;
-	loadPreferences();
-}
-%end
 
 
 
@@ -74,12 +66,12 @@ static void loadPreferences() {
 	if (keyboardSafari) {
 		
 		if ([keyboardSafari isEqualToString:@"default"]) {
-			result = 0;
-		    // NSLog(@"[Go.Away.Period.Button] keyboardType >> forcing value:%d", result);
+			result = UIKeyboardTypeDefault;
+		    DebugLog(@"keyboardType >> forcing value:%d", result);
 			
 		} else if ([keyboardSafari isEqualToString:@"address"]) {
-			result = 3;
-		    // NSLog(@"[Go.Away.Period.Button] keyboardType >> forcing value:%d", result);
+			result = UIKeyboardTypeURL;
+		    DebugLog(@"keyboardType >> forcing value:%d", result);
 		}
 	}
 	
@@ -89,11 +81,24 @@ static void loadPreferences() {
 
 
 
+//
+// Apply settings when Safari returns from background.
+//
+%hook Application
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+	%orig;
+	loadPreferences();
+}
+%end
+
+
+
 // Initialization stuff
 %ctor {	
 	@autoreleasepool {
-	    NSLog(@" [Go.Away.Period.Button] init.");		
+	    NSLog(@" Go.Away.Period.Button (MobileSafari) loaded.");
 		loadPreferences();
+		%init;
 	}
 }
 
